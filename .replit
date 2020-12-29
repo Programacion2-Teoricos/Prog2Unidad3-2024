@@ -1,2 +1,1 @@
-lenguage="java"
-run="java Main"
+run = "bash run_button.sh"

@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import logica.*;
 
-public class Main {
+public class PruebaEstudiantes {
 	public static void main(String[] args) {
 			
 		Scanner entrada = new Scanner(System.in);
