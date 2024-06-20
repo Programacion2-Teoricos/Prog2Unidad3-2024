@@ -4,22 +4,24 @@ import java.util.Scanner;
 
 public class Alumno {
 	//atributos
+	private int codigo;
 	private String apellido;
 	private int grupo;
 	private double cuotaBase;
-	private Fecha nacimiento ;
+	
 	
 	//constructor por defecto
 	public Alumno() {
-		nacimiento=new Fecha();
+		
 	}
 	
 	//constructor especÃ­fico
-	public Alumno(String ape, int gru, double cu, Fecha nacim) {
+	public Alumno(int cod,String ape, int gru, double cu) {
+		codigo=cod;
 		apellido=ape;
 		grupo=gru;
 		cuotaBase=cu;
-		nacimiento= nacim;
+		
 	}
 	
 	//getter y setter	get:obtener y set:poner
@@ -47,24 +49,17 @@ public class Alumno {
 		cuotaBase=cuota;
 	}
 	
-	public Fecha getNacimiento() {
-		return nacimiento;
-	}
 	
-	public void setNacimiento(Fecha nac) {
-		nacimiento=nac;
-	}
 	
-	//metodo especifico
-	public boolean boletoGratis() {
-		boolean siCorresponde = false;
-		int edad=2020-nacimiento.getAnio();
-		
-		if (edad<18)
-			siCorresponde = true;
-		return siCorresponde;
-	}
 	
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+
 	public double cuotaNeta() {
 		double monto = cuotaBase;
 		if (grupo == 1 || grupo == 2)
@@ -77,10 +72,11 @@ public class Alumno {
 	//toString
 	@Override
 	public String toString() {
-		return "apellido: "+apellido+
-				" grupo: "+grupo+
-				" cuotaBase: "+cuotaBase+
-				" Fecha Nac: "+nacimiento.toString();
+		return "\ncodigo: "+codigo+
+				"\napellido: "+apellido+
+				"\ngrupo: "+grupo+
+				"\ncuotaBase: "+cuotaBase;
+				
 				
 		
 	}
@@ -95,7 +91,7 @@ public class Alumno {
 		System.out.println("Ingrese cuotaBase: ");
 		setCuotaBase(teclado.nextDouble());
 		System.out.println("Ingrese fecha de nacimiento: ");
-		this.nacimiento.pedirDatos();
+		
 	}
 
 }
