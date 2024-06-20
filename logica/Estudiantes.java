@@ -1,5 +1,4 @@
 package logica;
-
 import java.util.ArrayList;
 
 public class Estudiantes {
@@ -14,8 +13,16 @@ public class Estudiantes {
 		lista.add(a);
 	}
 	
-	public void eliminar(Alumno a) {
-		lista.remove(a);
+	public void eliminar(int i){
+		lista.remove(i);
+	}
+	
+	public int cantidad() {
+		return lista.size();
+	}
+	
+	public Alumno devolver(int i) {
+		return lista.get(i);
 	}
 	
 	public boolean contiene(Alumno a) {
@@ -26,13 +33,6 @@ public class Estudiantes {
 		return esta;
 	}
 	
-	public Alumno devolver(int i) {
-		return lista.get(i);
-	}
-	
-	public int cantidad() {
-		return lista.size();
-	}
 	
 	public double totalCuotas() {
 		double suma=0;
@@ -41,6 +41,20 @@ public class Estudiantes {
 		}
 		
 		return suma;
+	}
+	public void eliminarXCodigo(int cod) {
+		int x=0;
+		boolean encontre=false;
+		do
+		 {
+			if(lista.get(x).getCodigo()==cod) {
+				lista.remove(x);
+				encontre=true;
+			 }else
+				x++;
+		 }while( x<lista.size()||!encontre);
+					
+		
 	}
 	
 	public double totalCuotas1() {
@@ -51,20 +65,12 @@ public class Estudiantes {
 		return suma;
 	}
 	
-	public int totalBecados() {
-		int cantidad = 0;
-		for (Alumno actual : lista) {
-			if (actual instanceof Becado)
-				cantidad++;
-			}
-		return cantidad;
-		}
-
+	
 	@Override
 	public String toString() {
-	return "Estudiantes " + lista
-	+ "\nSuma de cuotas netas = " + totalCuotas()
-	+ "\nTotal de estudiantes becados = " + totalBecados();
+	return "Estudiantes: " + lista;
+	//+ "\nSuma de cuotas netas = " + totalCuotas();
+	
 	}
 	
 	
