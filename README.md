@@ -1,3 +1,4 @@
-# Prog2Unidad5
-Proyecto del teórico de la Unidad 5 (ArrayList) con manejo de herencia y agregación
+# Prog2Unidad3- ArrayList
+Proyecto del teórico de la Unidad 3 (ArrayList) 
+Actualizado en junio 2024
 HECHO
